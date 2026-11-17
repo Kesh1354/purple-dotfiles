@@ -1,0 +1,83 @@
+@define-color primary #ffffffd9;
+@define-color bg-tertiary #0d0017;
+@define-color bg-surface #2d0f3d;
+@define-color bg-surface-higher #341446;
+@define-color brand #682f86;
+@define-color muted-purple #715277;
+@define-color nitro-violet #a764ed;
+
+
+* {
+  font-family: Maple Mono;
+  background: transparent;
+  color: @primary;
+}
+
+#window {
+  color: @primary;
+  border-color: @muted-purple;
+  border-style: solid;
+  border-width: 1px;
+
+  background-image: linear-gradient(to bottom, @bg-tertiary 100%);
+  border-radius: 14px;
+}
+
+#scroll {
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: @muted-purple;
+}
+
+#inner-box {
+  padding-top: 12px;
+}
+
+#entry {
+  border-style: none;
+  border-color: @muted-purple;
+  color: @primary;
+  padding: 6px;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  margin-right: 12;
+
+  border-radius: 12px;
+}
+
+#entry:selected {
+  background: @brand;
+  color: @primary;
+  font-weight: bold;
+  outline: none;
+}
+
+#input {
+  background-color: @bg-surface;
+  color: @primary;
+  border-color: @muted-purple;
+
+  border-style: none;
+  border-bottom-style: solid;
+  border-width: 1px;
+
+  font-style: normal;
+
+  border-radius: 8;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+  padding: 12px;
+  margin: 8px;
+}
+
+#input:focus {
+  background: @bg-surface-higher;
+  background-color: @bg-surface-higher;
+  border-color: @nitro-violet;
+}
+
+#img {
+  padding: 4px;
+  margin-right: 6px;
+}

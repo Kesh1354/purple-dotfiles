@@ -1,0 +1,19 @@
+@define-color primary rgba(255, 255, 255, 0.85);
+
+@define-color bg-tertiary #0d0017;
+@define-color bg-secondary-alt #160021;
+@define-color bg-secondary #1c0028;
+@define-color bg-primary #230431;
+@define-color bg-surface #2d0f3d;
+
+@define-color brand #682f86;
+@define-color brand-hover #632a82;
+@define-color brand-active #562173;
+@define-color muted-purple #715277;
+@define-color nitro-pink #e292aa;
+@define-color nitro-violet #a764ed;
+
+@define-color cyan #3ac3b8;
+@define-color green #28c168;
+@define-color orange #ff9100;
+@define-color red #ff2b00;

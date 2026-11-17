@@ -1,0 +1,32 @@
+/* fixes */
+
+.main-topBar-background {
+    background-color: var(--spice-main) !important;
+}
+.main-topBar-overlay {
+    background-color: rgba(13, 0, 23, 0.75) !important;
+}
+
+.main-entityHeader-backgroundColor,
+.main-actionBarBackground-background {
+    background-color: var(--spice-main) !important;
+    background-image: linear-gradient(rgba(104, 47, 134, 0.3), var(--spice-main)) !important;
+}
+
+.x-searchInput-searchInputInput,
+input {
+    background-color: var(--spice-main-elevated) !important;
+    color: var(--spice-text) !important;
+}
+
+.main-card-card {
+    background-color: var(--spice-card) !important;
+}
+.main-card-card:hover {
+    background-color: var(--spice-highlight) !important;
+}
+
+.main-contextMenu-menu {
+    background-color: var(--spice-main-elevated) !important;
+    border: 1px solid var(--spice-misc) !important;
+}

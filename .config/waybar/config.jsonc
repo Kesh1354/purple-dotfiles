@@ -1,0 +1,178 @@
+[
+  /*{
+    "id": "bar-0",
+    "layer": "bottom",
+    "ipc": true,
+    "position": "bottom",
+    "modules-center": [
+      "wlr/taskbar"
+    ],
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 32,
+      "icon-theme": "Numix-Circle",
+      "tooltip-format": "{title}",
+      "all-outputs": true,
+      "on-click": "activate",
+      "on-click-middle": "close"
+    }
+  },*/
+  {
+    "id": "bar-1",
+    "layer": "bottom",
+    "spacing": 0,
+    "height": 0,
+    "margin-bottom": 0,
+    "margin-top": 0,
+    "position": "top",
+    "margin-right": 0,
+    "margin-left": 0,
+    "modules-left": [
+      "sway/workspaces",
+      "mango/workspaces"
+    ],
+    "modules-center": [
+      "custom/applauncher"
+      // "wlr/taskbar"
+    ],
+    "modules-right": [
+      "custom/music",
+      "backlight",
+      "battery",
+      "pulseaudio",
+      "clock",
+      "tray",
+      "power-profiles-daemon",
+      "custom/power"
+    ],
+    "custom/applauncher": {
+      "format": "〇",
+      "tooltip": false,
+      "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15",
+    },
+    "tray": {
+      "icon-size": 21,
+      "spacing": 10,
+    },
+    "clock": {
+      "format": " {:%H:%M}",
+      "format-alt": "{:%A, %b %d %Y}",
+      "tooltip": false
+    },
+    "pulseaudio": {
+      "scroll-step": 5,
+      "smooth-scrolling-threshold": 2.0,
+      "max-volume": 200,
+      "format": "{volume}% {icon}",
+      "format-bluetooth": "{volume}% {icon} 󰂯",
+      "format-muted": "󰝟",
+      "format-icons": {
+        "default": [
+          "󰕿",
+          "󰖀",
+          "󰕾"
+        ],
+      },
+      "scroll-step": 5,
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+      "on-click-right": "pavucontrol",
+      "tooltip": false
+    },
+    "network": {
+      "format-wifi": " {bandwidthDownBits}",
+      "format-ethernet": "󰈀 {bandwidthDownBits}",
+      "format-disconnected": "󰤮 No Network",
+      "interval": 5,
+      "tooltip": false
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "events": {
+        "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+        "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": "󰂄 {capacity}%",
+      "format-plugged": "󰂄 {capacity}%",
+      "format-alt": "{icon} {capacity}% {time}",
+      "format-full": " {capacity}%",
+      "format-icons": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "max-length": 25,
+      "tooltip": false
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 32,
+      "icon-theme": "Numix-Circle",
+      "tooltip-format": "{title}",
+      "all-outputs": true,
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "tooltip": false
+    },
+    "custom/music": {
+      "escape": true,
+      "tooltip": true,
+      "signal": 5,
+      "interval": 1,
+      "smooth-scrolling-threshold": 2.0,
+      //
+      "exec": "(  [ \"$(playerctl -p 'fooyin,spotify' status 2>/dev/null)\" = \"Paused\" ] && playerctl -p 'fooyin,spotify' metadata --format=' {{ artist }} - {{ title }}'  || playerctl -p 'fooyin,spotify' metadata --format=' {{ artist }} - {{ title }}') && pkill -RTMIN+5 waybar ",
+      "on-click": "playerctl -p 'fooyin,spotify' play-pause",
+      "on-scroll-up": "playerctl -p 'fooyin,spotify' next && pkill -RTMIN+5 waybar",
+      "on-scroll-down": "playerctl -p 'fooyin,spotify' previous && pkill -RTMIN+5 waybar",
+      "max-length": 50,
+    },
+    "mpris": {
+      "format": "{player_icon} {artist} - {title}",
+      "format-paused": "{status_icon} {artist} - {title}",
+      "player-icons": {
+        "default": "",
+        "mpv": "󰿎",
+      },
+      "status-icons": {
+        "paused": "⏸"
+      },
+      "ignored-players": [
+        "firefox",
+        "vlc",
+        "mpv"
+      ]
+    },
+    "backlight": {
+      "format": "{icon} {percent}%",
+      "format-icons": [
+        "󰃞",
+        "󰃟",
+        "󰃠"
+      ],
+      "tooltip": false,
+      "scroll-step": 5,
+      "smooth-scrolling-threshold": 2.0
+    },
+    "custom/power": {
+      "tooltip": false,
+      "on-click": "wlogout &",
+      "format": "󰐥"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}   {profile}",
+      "tooltip-format": "Power profile: {profile}nDriver: {driver}",
+      "tooltip": false,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    }
+  },
+]

@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "purple",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "kesh-purple@example.com"
+    }
+  },
+  "theme": {
+    "colors": {
+      "frame": "#682f86",
+      "tab_background_text": "#f5eef8",
+      "tab_selected": "#f3e8fa",
+      "tab_text": "#230431",
+      "toolbar": "#f3e8fa",
+      "toolbar_text": "#230431",
+      "toolbar_field": "#ffffff",
+      "toolbar_field_text": "#230431",
+      "ntp_background": "#f5eef8",
+      "ntp_card_background": "#ffffff",
+      "ntp_text": "#230431"
+    }
+  },
+  "dark_theme": {
+    "colors": {
+      "frame": "#0d0017",
+      "tab_background_text": "#d8cfe0",
+      "tab_selected": "#1c0028",
+      "button_background_hover": "#632a82",
+      "tab_text": "#ffffff",
+      "toolbar": "#1c0028",
+      "toolbar_text": "#e6dfec",
+      "toolbar_field": "#2d0f3d",
+      "toolbar_field_text": "#ffffff",
+      "ntp_background": "#0d0017",
+      "ntp_card_background": "#1c0028",
+      "ntp_text": "#e6dfec"
+    }
+  }
+}
